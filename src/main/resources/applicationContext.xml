@@ -10,6 +10,8 @@
     <context:annotation-config/>
     <context:component-scan base-package="com.sample"/>
 
+<!--    Load the sport properties file-->
+    <context:property-placeholder location="classpath:sport.properties"/>
 <!--    This bean is configurable-->
     <bean id="trackCoach" class="com.sample.TrackCoach">
     </bean>
@@ -31,5 +33,12 @@
         <property name="fortuneService" ref="myFortuneService"/>
         <property name="emailAddress" value="abc@gmail.com"/>
         <property name="team" value="CSK"/>
+    </bean>
+
+<!--    Reading from properties file-->
+    <bean id="myCricketCoachProp" class="com.sample.CricketCoach">
+        <property name="fortuneService" ref="myFortuneService"/>
+        <property name="emailAddress" value="${team.email}"/>
+        <property name="team" value="${team.name}"/>
     </bean>
 </beans>

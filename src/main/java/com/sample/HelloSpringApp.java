@@ -29,6 +29,13 @@ public class HelloSpringApp {
         System.out.println(cricketCoach.getDailyFortune());
         System.out.println(cricketCoach.getEmailAddress());
         System.out.println(cricketCoach.getTeam());
+
+        System.out.println("----------------------Reading from properties file -----------------");
+        cricketCoach=context.getBean("myCricketCoachProp",CricketCoach.class);
+        System.out.println(cricketCoach.getDailyWorkout());
+        System.out.println(cricketCoach.getDailyFortune());
+        System.out.println(cricketCoach.getEmailAddress());
+        System.out.println(cricketCoach.getTeam());
         context.close();
     }
 }

@@ -14,4 +14,16 @@
     <bean id="trackCoach" class="com.sample.TrackCoach">
     </bean>
 
+<!--    constructor injection  on BaseballCoach  -->
+    <bean id="myFortuneService" class="com.sample.HappyFortuneService"/>
+
+    <bean id="myBaseballCoach" class="com.sample.BaseballCoach">
+        <constructor-arg ref="myFortuneService"/>
+    </bean>
+
+<!--    Construction Injection on TrackCoach    -->
+    <bean id="myTrackCoach" class="com.sample.TrackCoach">
+        <constructor-arg ref="myFortuneService"/>
+    </bean>
+
 </beans>

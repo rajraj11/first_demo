@@ -26,4 +26,10 @@
         <constructor-arg ref="myFortuneService"/>
     </bean>
 
+<!--    Setter injection of Cricket Coach-->
+    <bean id="myCricketCoach" class="com.sample.CricketCoach">
+        <property name="fortuneService" ref="myFortuneService"/>
+        <property name="emailAddress" value="abc@gmail.com"/>
+        <property name="team" value="CSK"/>
+    </bean>
 </beans>
